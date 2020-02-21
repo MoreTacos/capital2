@@ -7,3 +7,5 @@ const HomePage = () => (
     <div>Homepage</div>
   </div>
 );
+
+export default HomePage;
