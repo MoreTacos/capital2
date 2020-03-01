@@ -3,19 +3,25 @@ import logo from './logo.svg';
 
 import HomePage from './pages/homepage/homepage.component';
 import GamesPage from './pages/gamespage/gamespage.component';
-import { Route, Switch } from 'react-router-dom';
+import SignUpSignIn from './pages/signupsignin/signupsignin.component';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Header from './components/header/header.component';
 
 import './App.css';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <div>Test</div>
-        <Switch>
-          <Route path="/" component={HomePage} />
-          <Route path="/games" component={GamesPage} />
-        </Switch>
+      <div className="app">
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/games" component={GamesPage} />
+            <Route path="/signin" component={SignUpSignIn} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
